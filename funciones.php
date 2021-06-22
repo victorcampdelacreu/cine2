@@ -170,6 +170,18 @@ function comprobar_espectador($DNI){
     $result = mysqli_query(OpenCon(), $sql);   
     return $result->num_rows; // pasa el resultado a num_rows
 }
+//***************************************************************** */
+
+function buscar_tarjetaEspectador($DNI)
+{
+    $query = "select tarjeta FROM espectadores where DNI ='$DNI'";
+    $result = mysqli_query(OpenCon(), $query);
+    $res = mysqli_fetch_array($result);
+    return $res;
+}
+
+
+
 //******************************************************************** */
 
 function calculo_zona($f, $c, $n, $m)
@@ -206,9 +218,4 @@ function comprobar_compra($fecha, $sala_id,$sesion,$fila,$butaca){
     return $result->num_rows; // pasa el resultado a num_rows
 }
 
-function listarTodo(){
-    $sql = "SELECT * FROM compras WHERE fecha = '$fecha' and sala_id = $sala_id and sesion= $sesion and fila = $fila and butaca = $butaca ";
-    $result = mysqli_query(OpenCon(), $sql);   
-    // comentario
-    return $result->num_rows; // pasa el resultado a num_rows
-}
+
