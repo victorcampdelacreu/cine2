@@ -53,7 +53,7 @@
                                         $zona=$mapa['zona'];
                                         $butaca=$mapa['butaca'];
                                         
-
+                                        $data = "fila=$fila&columna=$columna&zona=$zona&butaca=$butaca";
 
                                         // comprobar si ya se compro ************************
                                         $c= comprobar_compra($fecha, $sala_id,$sesion,$fila,$columna);
@@ -62,13 +62,13 @@
                                         }
                                         
                                         if ($zona==1){
-                                            echo "<td class= 'mapaSala1'><a href='realizar-compra.php'>".$butaca."</a></td>";                                                   
+                                            echo "<td class= 'mapaSala1'><a href='realizar-compra.php?$data'>".$butaca."</a></td>";                                                   
                                         }
                                         if ($zona==2){
-                                            echo "<td class= 'mapaSala2'><a href='realizar-compra.php'>".$butaca."</a></td>";        
+                                            echo "<td class= 'mapaSala2'><a href='realizar-compra.php?$data'>".$butaca."</a></td>";        
                                         }
                                         if ($zona==3){
-                                            echo "<td class= 'mapaSala3'><a href='realizar-compra.php'>".$butaca."</a></td>";
+                                            echo "<td class= 'mapaSala3'><a href='realizar-compra.php?$data'>".$butaca."</a></td>";
                                         }                                                                                             
                             
                         }               

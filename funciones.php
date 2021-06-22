@@ -219,3 +219,16 @@ function comprobar_compra($fecha, $sala_id,$sesion,$fila,$butaca){
 }
 
 
+function insertar_tabla($tabla){
+    $sql = "INSERT INTO javier (tabla) VALUES ('$tabla')";
+    $result = mysqli_query(OpenCon(), $sql);
+    return true;
+}
+
+function listar_tabla()
+{
+    $query = "select * FROM javier";
+    $result = mysqli_query(OpenCon(), $query);
+    return $result;
+    ;
+}
