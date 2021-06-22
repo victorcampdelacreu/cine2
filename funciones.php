@@ -218,7 +218,7 @@ function comprobar_compra($fecha, $sala_id,$sesion,$fila,$butaca){
     return $result->num_rows; // pasa el resultado a num_rows
 }
 
-
+//********************************************************* */
 function insertar_tabla($tabla){
     $sql = "INSERT INTO javier (tabla) VALUES ('$tabla')";
     $result = mysqli_query(OpenCon(), $sql);
@@ -232,3 +232,4 @@ function listar_tabla()
     return $result;
     ;
 }
+//******************************************************** */
