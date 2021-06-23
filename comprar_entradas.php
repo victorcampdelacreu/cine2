@@ -14,7 +14,7 @@
         require('funciones.php');
         $id= $_GET['id'];  //comprobado y llega bien el id de cartelera
         $fecha=$_GET['fecha'];
-
+        
         $peliculas = listar_peliculas();
         $salas = listar_salas();
         $cartelera = listar_cartelera();
@@ -34,7 +34,7 @@
             $sesion = $seleccion['sesion'];
             $horaInicio = $seleccion['horaInicio'];
             $pelicula_id = $seleccion['pelicula_id'];
-            $fecha=$seleccion['fechaInicio'];
+            
             }
         }
         // muestra mapa sala
@@ -53,7 +53,7 @@
                                         $zona=$mapa['zona'];
                                         $butaca=$mapa['butaca'];
                                         
-                                        $data = "fila=$fila&columna=$columna&zona=$zona&butaca=$butaca";
+                                        $data = "fecha=$fecha&sala_id=$sala_id&pelicula_id=$pelicula_id&sesion=$sesion&horaInicio=$horaInicio&fila=$fila&columna=$columna&zona=$zona&butaca=$butaca&cartelera_id=$id";
 
                                         // comprobar si ya se compro ************************
                                         $c= comprobar_compra($fecha, $sala_id,$sesion,$fila,$columna);
