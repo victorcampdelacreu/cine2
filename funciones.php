@@ -218,6 +218,12 @@ function comprobar_compra($fecha, $sala_id,$sesion,$fila,$butaca){
     return $result->num_rows; // pasa el resultado a num_rows
 }
 
+function insertar_compra($fecha,$sala_id,$pelicula_id,$sesion,$fila,$butaca,$precio,$cartelera_id)
+{
+    $query = "INSERT INTO compras(fecha,sala_id,sesion,fila,butaca,precio,cartelera_id) VALUES ('$fecha','$sala_id','$pelicula_id','$sesion','$fila','$butaca','$precio','$cartelera_id)";
+    $result = mysqli_query(OpenCon(), $query);
+    return true;
+}
 //********************************************************* */
 function insertar_tabla($tabla){
     $sql = "INSERT INTO javier (tabla) VALUES ('$tabla')";
@@ -230,6 +236,13 @@ function listar_tabla()
     $query = "select * FROM javier";
     $result = mysqli_query(OpenCon(), $query);
     return $result;
-    ;
+    
 }
 //******************************************************** */
+function buscar_precio($sala_id, $zona, $sesion){
+    $query="SELECT precioButaca FROM precios WHERE sala_id = $sala_id AND zona= $zona AND sesion = $sesion ";
+    $result = mysqli_query(OpenCon(), $query);
+    $res = mysqli_fetch_array($result);
+    return $res;
+}
+

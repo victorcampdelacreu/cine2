@@ -18,7 +18,7 @@
         <input required type="text" name="zona" placeholder="entre la zona" />
         <input required type="text" name="sesion" placeholder="entre la sesion" />
         <input required type="text" name="precioButaca" placeholder="entre precio de la butaca" />
-    
+        
 
         <button class = "botonEnviar" type="submit">Enviar</button>
     </form>
@@ -31,7 +31,7 @@
                 <td>ID</td>
                 <td>Sala</td>
                 <td>Zona</td>
-                <td>Funcion</td>
+                <td>Sesion</td>
                 <td>Precio Butaca</td>
                 <td>Opciones</td>
             </tr>
@@ -52,7 +52,7 @@
                 echo '<td>' . $precio['precioButaca'] . '</td>';
                 
                
-                echo '<td><a href="">Editar</a>&nbsp;&nbsp;&nbsp; <a href="eliminar_peliculas.php?id=' . $precio['id'] . '">Eliminar</a> </td>';
+                echo '<td><a href="">Editar</a>&nbsp;&nbsp;&nbsp; <a href="eliminar_precios.php?id=' . $precio['id'] . '">Eliminar</a> </td>';
                 echo '</tr>';
             }
             ?>

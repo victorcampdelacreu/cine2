@@ -11,5 +11,18 @@ $zona = $_GET['zona'];
 $butaca = $_GET['butaca'];
 $cartelera_id=$_GET['cartelera_id'];
 
+require('funciones.php');
 
-echo $fecha . ' - '.$sala_id . ' - '. $pelicula_id . ' - '.$sesion . ' - '.$horaInicio . ' - '.$fila . ' - '.$columna . ' - '.$zona. ' - '.$butaca. ' - ' .$cartelera_id;
+
+$precio= buscar_precio($sala_id,$zona,$sesion);
+
+
+echo $fecha . ' - '.$sala_id . ' - '. $pelicula_id . ' - '.$sesion . ' - '.$horaInicio . ' - '.$fila . ' - '.$columna . ' - '.$zona. ' - '.$butaca. ' - ' .$precio .' -'. $cartelera_id;
+
+// busca precio
+
+
+
+insertar_compra($fecha,$sala_id,$pelicula_id,$sesion,$horaInicio,$fila,$butaca,$precio,$cartelera_id);
+
+

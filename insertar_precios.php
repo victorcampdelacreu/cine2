@@ -4,7 +4,7 @@ require('funciones.php');
 
 
 $sala_id =$_POST['sala_id'];
-$clase =$_POST['zona'];
+$zona =$_POST['zona'];
 $sesion =$_POST['sesion'];
 $precioButaca =$_POST['precioButaca'];
 
