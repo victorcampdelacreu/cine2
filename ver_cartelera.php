@@ -11,6 +11,7 @@
 
 </body>
     <?php
+        // este programa muestra la cartelera de una fecha determinada y permite elegir lo que se quiere comprar
         require('./funciones.php');
         $peliculas = listar_peliculas();
         $salas = listar_salas();

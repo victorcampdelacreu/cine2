@@ -11,6 +11,7 @@
 
 <body>
     <?php
+        // este programa permite al espectador elegir butacas de la sala y pelicula seleccionada en "ver_cartelera"
         require('funciones.php');
         $id= $_GET['id'];  //comprobado y llega bien el id de cartelera
         $fecha=$_GET['fecha'];
@@ -19,7 +20,7 @@
         $salas = listar_salas();
         $cartelera = listar_cartelera();
         $mapas = listar_mapas();
-        $espectador = listar_espectadores();
+        
         
 
     
@@ -37,6 +38,9 @@
             
             }
         }
+        // muestra leyenda "seleccione asiento!"
+        
+
         // muestra mapa sala
         $n=0;
         echo "<table>";
@@ -75,11 +79,20 @@
                 }             
         echo "</table>";
 
-
+        
 
 
 
     ?>
+
+    <br>
+        <div class="cajas">
+            <h2>
+                <a class="enlaces" href="pago.php">Ir a pago entrdas</a>
+            </h2>
+        </div>
+
+
     </html>
 
   

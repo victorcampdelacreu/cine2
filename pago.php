@@ -11,6 +11,9 @@
 
 </body>
     <?php
+        // este programa pregunta al espectador si esta registrado o no. Si no lo está pide una tarjeta para pago
+        // muestra todas las butacas reservadas "comprar_entradas --> realizar_compra" y pregunta si confirma o no
+        // en el caso de confirmar se emitiran las entradas "emitir_entradas", sino se eliminaran las reservas
         require('./funciones.php');
         
         $salas = listar_salas();
