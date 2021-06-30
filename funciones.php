@@ -218,7 +218,7 @@ function comprobar_compra($fecha, $sala_id,$sesion,$fila,$butaca){
     return $result->num_rows; // pasa el resultado a num_rows
 }
 
-function insertar_compra($fecha,$sala_id,$pelicula_id,$sesion,$fila,$butaca,$precio,$cartelera_id)
+function insertar_compras($fecha,$sala_id,$pelicula_id,$sesion,$fila,$butaca,$precio,$cartelera_id)
 {
     $query = "INSERT INTO compras(fecha,sala_id,sesion,fila,butaca,precio,cartelera_id) VALUES ('$fecha','$sala_id','$pelicula_id','$sesion','$fila','$butaca','$precio','$cartelera_id)";
     $result = mysqli_query(OpenCon(), $query);

@@ -37,7 +37,7 @@
     ?>
     <br>
         
-     <a href="comprar_emtradas.php?'id= . $cartelera_id . '&fecha=' . $fecha .'"></a>
+    <!--<a href="comprar_emtradas.php?'id= . $cartelera_id . '&fecha=' . $fecha .'"></a>-->
             
         
 
