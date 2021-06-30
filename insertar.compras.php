@@ -13,7 +13,7 @@ $poblacion =$_POST['butaca'];
 $precio =$_POST['precio'];
 $cartelera_id =$_POST['cartelera_id'];
 
-$insertado = insertar_compras($fecha,$sala_id,$pelicula_id,$sesion,$horaInicio,$fila,$butaca,$precio,$cartelera_id);
+$insertado = insertar_compra($fecha,$sala_id,$pelicula_id,$sesion,$horaInicio,$fila,$butaca,$precio,$cartelera_id);
 
 
 header("Location: realizar_compra.php");

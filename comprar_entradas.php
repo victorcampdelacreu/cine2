@@ -10,6 +10,13 @@
 </head>
 
 <body>
+
+<!--muestra leyenda "seleccione asiento!"-->
+        <div class="cajas">
+            <h2>
+                <a class="enlaces">Elija asientos</a>
+            </h2>
+        </div>
     <?php
         // este programa permite al espectador elegir butacas de la sala y pelicula seleccionada en "ver_cartelera"
         require('funciones.php');
@@ -38,7 +45,6 @@
             
             }
         }
-        // muestra leyenda "seleccione asiento!"
         
 
         // muestra mapa sala

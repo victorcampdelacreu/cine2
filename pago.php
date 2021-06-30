@@ -43,7 +43,7 @@
                 }
                 else{
                     $tarjeta = $POST['tarjeta']; 
-                    // verificar que tarjeta tiene 16 digitos (ver registrar espectadores)
+                    // verifica que tarjeta tiene 16 digitos (ver registrar espectadores)
                     $tam = strlen($tarjeta); // calcula el num caracteres de la tarjeta
 
                     if ($tam != 16) {
@@ -77,22 +77,22 @@
                         $importe=0;
                         $i=0;
                         while ($compra = mysqli_fetch_array($compras)) {
-
-                            $sala = buscar_sala($compra['sala_id']);
-                            $pelicula = buscar_pelicula($compra['id']);
-                            echo '<tr>';
-                            echo '<td>' . $compra['id'] . '</td>';
-                            echo '<td>' . $sala['nombre'] . '</td>';
-                            echo '<td>' . $compra['sesion'] . '</td>';
-                            echo '<td>' . $compra['horaInicio'] . '</td>';
-                            echo '<td>' . $pelicula['nombre'] . '</td>';
-                            echo '<td>' . $compra['fila'] . '</td>';
-                            echo '<td>' . $compra['butaca'] . '</td>';
-                            echo '<td>' . $compra['precio'] . '</td>';
-                            $importe=$importe + $compra['precio'];
-                            $tabla[$i] =$compra['id'];
-                            $i=$i+1;
-                                           
+                            if($compra['cartelera_id']>0){ // indica que no se ha pagado y emitido aun
+                                $sala = buscar_sala($compra['sala_id']);
+                                $pelicula = buscar_pelicula($compra['id']);
+                                echo '<tr>';
+                                echo '<td>' . $compra['id'] . '</td>';
+                                echo '<td>' . $sala['nombre'] . '</td>';
+                                echo '<td>' . $compra['sesion'] . '</td>';
+                                echo '<td>' . $compra['horaInicio'] . '</td>';
+                                echo '<td>' . $pelicula['nombre'] . '</td>';
+                                echo '<td>' . $compra['fila'] . '</td>';
+                                echo '<td>' . $compra['butaca'] . '</td>';
+                                echo '<td>' . $compra['precio'] . '</td>';
+                                $importe=$importe + $compra['precio'];
+                                $tabla[$i] =$compra['id'];
+                                $i=$i+1;
+                            }               
                         }
                         echo '<td>' . $importe . '</td>';
                     ?>
@@ -105,7 +105,7 @@
                         $confirmar=$_POST['confirmar'];
                         if ($confirmar ==1){
                         
-                        echo '<td><a href="emitir_entradas.php?id=' . $compra['id'] .'">Emitir entradas</a> </td>';
+                        echo '<td><a href="emitir_entradas.php?id=' . $tabla .'">Emitir entradas</a> </td>';
                         echo '</tr>';
                         }
                         else{

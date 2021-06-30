@@ -31,13 +31,13 @@
         // control
         echo $fecha . ' - '.$sala_id . ' - '. $pelicula_id . ' - '.$sesion . ' - '.$horaInicio . ' - '.$fila . ' - '.$columna . ' - '.$zona. ' - '.$butaca. ' - ' .$precio .' -'. $cartelera_id;
 
-        insertar_compras($fecha,$sala_id,$pelicula_id,$sesion,$horaInicio,$fila,$butaca,$precio,$cartelera_id);
-
+        //insertar_compra($fecha,$sala_id,$pelicula_id,$sesion,$horaInicio,$fila,$butaca,$precio,$cartelera_id);
+        
 
     ?>
     <br>
         
-    <!--<a href="comprar_emtradas.php?'id= . $cartelera_id . '&fecha=' . $fecha .'"></a>-->
+    <a href="comprar_emtradas.php?'id= . $cartelera_id . '&fecha=' . $fecha .'"></a>
             
         
 
