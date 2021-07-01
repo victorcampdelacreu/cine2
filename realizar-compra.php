@@ -29,15 +29,13 @@
         $p= buscar_precio($sala_id,$zona,$sesion);
         $precio= $p['precioButaca'];
         // control
-        echo $fecha . ' - '.$sala_id . ' - '. $pelicula_id . ' - '.$sesion . ' - '.$horaInicio . ' - '.$fila . ' - '.$columna . ' - '.$zona. ' - '.$butaca. ' - ' .$precio .' -'. $cartelera_id;
+       // echo $fecha . ' - '.$sala_id . ' - '. $pelicula_id . ' - '.$sesion . ' - '.$horaInicio . ' - '.$fila . ' - '.$columna . ' - '.$zona. ' - '.$butaca. ' - ' .$precio .' -'. $cartelera_id;
 
         insertar_compra($fecha,$sala_id,$pelicula_id,$sesion,$horaInicio,$fila,$butaca,$precio,$cartelera_id);
         
-
+        header("Location: comprar_entradas.php?id=".$cartelera_id."&fecha=".$fecha."");
     ?>
-    <br>
-        
-    <a href="comprar_emtradas.php?'id= . $cartelera_id . '&fecha=' . $fecha .'"></a>
+    
             
         
 

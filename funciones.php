@@ -62,7 +62,8 @@ function buscar_sala($sala_id)
 {
     $query = "select * FROM salas where id ='$sala_id'";
     $result = mysqli_query(OpenCon(), $query);
-    return $result;
+    $res = mysqli_fetch_array($result);
+    return $res;
 }
 //************************************************************************ */
 
@@ -220,7 +221,7 @@ function comprobar_compra($fecha, $sala_id,$sesion,$fila,$butaca){
 
 function insertar_compra($fecha,$sala_id,$pelicula_id,$sesion,$horaInicio,$fila,$butaca,$precio,$cartelera_id)
 {
-    $query = "INSERT INTO compras(fecha,sala_id,sesion,horaInicio,fila,butaca,precio,cartelera_id) VALUES ('$fecha','$sala_id','$pelicula_id','$sesion','$horaInicio','$fila','$butaca','$precio','$cartelera_id)";
+    $query = "INSERT INTO compras(fecha,sala_id,pelicula_id,sesion,horaInicio,fila,butaca,precio,cartelera_id) VALUES ('$fecha',$sala_id,$pelicula_id,$sesion,'$horaInicio',$fila,$butaca,$precio,$cartelera_id)";
     $result = mysqli_query(OpenCon(), $query);
     return true;
 }
@@ -236,15 +237,21 @@ function buscar_compra($id)
 {
     $query = "select * FROM compras where id ='$id'";
     $result = mysqli_query(OpenCon(), $query);
+    $res = mysqli_fetch_array($result);
+    return $res;
+}
+
+function listar_compras()
+{
+    $query = "select * FROM compras";
+    $result = mysqli_query(OpenCon(), $query);
     return $result;
 }
 
-function modificar_compra($fecha,$sala_id,$pelicula_id,$sesion,$horaInicio,$fila,$butaca,$precio,$cartelera_id){
+function modificar_compra($compras_id,$fecha,$sala_id,$pelicula_id,$sesion,$horaInicio,$fila,$butaca,$precio,$cartelera_id){
     $sql = "UPDATE compras SET fecha='$fecha', sala_id='$sala_id',pelicula_id='$pelicula_id', sesion='$sesion', horaInicio='$horaInicio',fila='$fila',butaca='$butaca',precio='$precio',cartelera_id='$cartelera_id' WHERE id= $compras_id";
     mysqli_query(OpenCon(), $sql);
     return true;
-
-
 }
 //********************************************************* */
 function insertar_tabla($tabla){
@@ -268,3 +275,6 @@ function buscar_precio($sala_id, $zona, $sesion){
     return $res;
 }
 
+function entradas(){
+    $query = "SELECT * FROM compras WHERE cartelera_id = 0";
+}

@@ -94,7 +94,7 @@
     <br>
         <div class="cajas">
             <h2>
-                <a class="enlaces" href="pago.php">Ir a pago entrdas</a>
+                <a class="enlaces" href="pago.php">Ir a pago entradas</a>
             </h2>
         </div>
 
