@@ -11,10 +11,17 @@
 
 <body>
     <?php
+        require('funciones.php');
         $i=0;
         $tabla=$GET_['tabla'];
         if ($tabla[$i]>0){
-            // busca compra e imprime entrada
+            // busca compra, pone cartelera_id=0 e imprime entrada
+            $id=$tabla[$i];
+            $compras=buscar_compra($id);
+            $compra = mysqli_fetch_array($compras);
+            $compra['cartelera_id']=0;
+            $compra=modificar_compra($fecha,$sala_id,$pelicula_id,$sesion,$horaInicio,$fila,$butaca,$precio,$cartelera_id);
+
 
 
         }

@@ -113,6 +113,8 @@
                             for ($i=0;$i<20;$i++){
                                 if($i>0){
                                     //eliminar la compra ***********************************************
+                                    $id=$tabla[$i];
+                                    "eliminar_compra php?id= . $id . ";
                                 }
 
                             }

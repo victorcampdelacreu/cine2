@@ -218,11 +218,33 @@ function comprobar_compra($fecha, $sala_id,$sesion,$fila,$butaca){
     return $result->num_rows; // pasa el resultado a num_rows
 }
 
-function insertar_compra($fecha,$sala_id,$pelicula_id,$sesion,$fila,$butaca,$precio,$cartelera_id)
+function insertar_compra($fecha,$sala_id,$pelicula_id,$sesion,$horaInicio,$fila,$butaca,$precio,$cartelera_id)
 {
-    $query = "INSERT INTO compras(fecha,sala_id,sesion,fila,butaca,precio,cartelera_id) VALUES ('$fecha','$sala_id','$pelicula_id','$sesion','$fila','$butaca','$precio','$cartelera_id)";
+    $query = "INSERT INTO compras(fecha,sala_id,sesion,horaInicio,fila,butaca,precio,cartelera_id) VALUES ('$fecha','$sala_id','$pelicula_id','$sesion','$horaInicio','$fila','$butaca','$precio','$cartelera_id)";
     $result = mysqli_query(OpenCon(), $query);
     return true;
+}
+
+function eliminar_compra($id)
+{
+    $query = "DELETE FROM compras WHERE id = '$id'";
+    $result = mysqli_query(OpenCon(), $query);
+    return true;
+}
+
+function buscar_compra($id)
+{
+    $query = "select * FROM compras where id ='$id'";
+    $result = mysqli_query(OpenCon(), $query);
+    return $result;
+}
+
+function modificar_compra($fecha,$sala_id,$pelicula_id,$sesion,$horaInicio,$fila,$butaca,$precio,$cartelera_id){
+    $sql = "UPDATE compras SET fecha='$fecha', sala_id='$sala_id',pelicula_id='$pelicula_id', sesion='$sesion', horaInicio='$horaInicio',fila='$fila',butaca='$butaca',precio='$precio',cartelera_id='$cartelera_id' WHERE id= $compras_id";
+    mysqli_query(OpenCon(), $sql);
+    return true;
+
+
 }
 //********************************************************* */
 function insertar_tabla($tabla){
