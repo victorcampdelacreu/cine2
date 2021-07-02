@@ -26,8 +26,8 @@
             $n = 0;
             $m = 0;
             $sala_id = $_POST['sala_id'];
-            $salas = buscar_sala($sala_id);
-            $sala = mysqli_fetch_array($salas);
+            $sala = buscar_sala($sala_id);
+            
             $n = $sala['numFilas'];
             $m = $sala['numColumnas'];            
             

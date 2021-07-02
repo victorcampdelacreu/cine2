@@ -66,14 +66,10 @@
                                         $data = "fecha=$fecha&sala_id=$sala_id&pelicula_id=$pelicula_id&sesion=$sesion&horaInicio=$horaInicio&fila=$fila&columna=$columna&zona=$zona&butaca=$butaca&cartelera_id=$id";
 
                                         // comprobar si ya se compro ************************
-                                       echo $fecha;
-                                       echo $sala_id;
-                                       echo $sesion;
-                                       echo $fila;
-                                       echo $butaca;
+                                        $c=0;
                                         $c= comprobar_compra($fecha, $sala_id,$sesion,$fila,$butaca);
                                        
-                                            echo die;
+                                            
                                         if ($c!=0){ // indica que y esta ocupada
                                             
                                             

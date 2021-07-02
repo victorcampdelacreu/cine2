@@ -14,7 +14,7 @@
     require('funciones.php');
     $i = 0;
     $tabla = $_POST['tabla'];
-    $tabla = explode(",", $tabla); ?>
+    $tabla = explode(",", $tabla); ?> <!-- instruccion para traer la tabla-->
 
     <table border="1">
         <thead>

@@ -31,20 +31,24 @@ $espectador = listar_espectadores();
 
 <?php
 if (isset($_POST['formularioEspectador'])) {
-
+    // busca la tarjeta del espectador
     $DNI = $_POST['DNI'];
     if ($DNI != "") {
 
         $tarjeta = buscar_tarjetaEspectador($DNI);
+        
+        
         // si no encuentra espectador, lanzar mensaje de error
 
     } else {
-        $tarjeta = $POST['tarjeta'];
+        // toma el numero de tarjeta que se ha introducido
+        $tarjeta = $_POST['tarjeta'];
         // verifica que tarjeta tiene 16 digitos (ver registrar espectadores)
         $tam = strlen($tarjeta); // calcula el num caracteres de la tarjeta
-
+        
         if ($tam != 16) {
-            header("Location: http://localhost/cine/registro_espectadores.php?mensaje=El número de tarjeta debe de tener 16 caracteres");
+            
+            header("Location: http://localhost/cine/pago.php?mensaje=El número de tarjeta debe de tener 16 caracteres");
         }
     }
 }
@@ -115,6 +119,7 @@ if (isset($_POST['confirmar'])) {
     $confirmar = $_POST['confirmar'];  
     if ($confirmar == 1) { ?>
         <br><br>
+        <!-- instrucciones para enviar la tabla (implode - explode -->)
         <form action="emitir_entradas.php" method="POST">
             <input type="hidden" value="<?php echo implode(",", $tabla) ?>" name="tabla">
             <button style="width: 120px;" type="submit" class="botonEnviar">Emitir Entradas</button>
