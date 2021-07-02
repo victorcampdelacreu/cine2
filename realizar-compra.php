@@ -11,7 +11,7 @@
 
 <body>
     <?php
-        // este programa trae los datos de cada butacaa comprada y los inserta en "compras", luego vuelve a "comprar_entradas
+        // este programa trae los datos de cada butaca comprada y los inserta en "compras", luego vuelve a "comprar_entradas
         $fecha=$_GET['fecha'];
         $sala_id = $_GET['sala_id'];
         $pelicula_id = $_GET['pelicula_id'];
@@ -28,9 +28,7 @@
 
         $p= buscar_precio($sala_id,$zona,$sesion);
         $precio= $p['precioButaca'];
-        // control
-       // echo $fecha . ' - '.$sala_id . ' - '. $pelicula_id . ' - '.$sesion . ' - '.$horaInicio . ' - '.$fila . ' - '.$columna . ' - '.$zona. ' - '.$butaca. ' - ' .$precio .' -'. $cartelera_id;
-
+       
         insertar_compra($fecha,$sala_id,$pelicula_id,$sesion,$horaInicio,$fila,$butaca,$precio,$cartelera_id);
         
         header("Location: comprar_entradas.php?id=".$cartelera_id."&fecha=".$fecha."");

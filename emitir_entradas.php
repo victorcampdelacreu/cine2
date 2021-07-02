@@ -33,7 +33,7 @@
         <tbody>
 
             <?php foreach ($tabla as $compra_id) {
-                // busca compra, pone cartelera_id=0 e imprime entrada
+                // busca compra, pone cartelera_id=0 
                 $id = $compra_id;
                 $compra = buscar_compra($id);
                 $cartelera_id = 0;
@@ -41,7 +41,7 @@
                 
                 $sala = buscar_sala($compra['sala_id']);
                 $pelicula = buscar_pelicula($compra['pelicula_id']);
-
+                // imprime entradas en formato tabla
                 echo '<tr>';
                 echo '<td>' . $compra['id'] . '</td>';
                 echo '<td>' . $compra['fecha'] . '</td>';

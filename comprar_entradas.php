@@ -66,19 +66,29 @@
                                         $data = "fecha=$fecha&sala_id=$sala_id&pelicula_id=$pelicula_id&sesion=$sesion&horaInicio=$horaInicio&fila=$fila&columna=$columna&zona=$zona&butaca=$butaca&cartelera_id=$id";
 
                                         // comprobar si ya se compro ************************
-                                        $c= comprobar_compra($fecha, $sala_id,$sesion,$fila,$columna);
-                                        if ($c>0){ // indica que y esta ocupada
-                                         //   echo "<td class= 'mapaSala4'>".$butaca.'</td>'; 
+                                       echo $fecha;
+                                       echo $sala_id;
+                                       echo $sesion;
+                                       echo $fila;
+                                       echo $butaca;
+                                        $c= comprobar_compra($fecha, $sala_id,$sesion,$fila,$butaca);
+                                       
+                                            echo die;
+                                        if ($c!=0){ // indica que y esta ocupada
+                                            
+                                            
+                                        echo "<td class= 'mapaSala4'>".$butaca.'</td>'; 
                                         }
-                                        
-                                        if ($zona==1){
-                                            echo "<td class= 'mapaSala1'><a href='realizar-compra.php?$data'>".$butaca."</a></td>";                                                   
-                                        }
-                                        if ($zona==2){
-                                            echo "<td class= 'mapaSala2'><a href='realizar-compra.php?$data'>".$butaca."</a></td>";        
-                                        }
-                                        if ($zona==3){
-                                            echo "<td class= 'mapaSala3'><a href='realizar-compra.php?$data'>".$butaca."</a></td>";
+                                        else{
+                                            if ($zona==1){
+                                                echo "<td class= 'mapaSala1'><a href='realizar-compra.php?$data'>".$butaca."</a></td>";                                                   
+                                            }
+                                            if ($zona==2){
+                                                echo "<td class= 'mapaSala2'><a href='realizar-compra.php?$data'>".$butaca."</a></td>";        
+                                            }
+                                            if ($zona==3){
+                                                echo "<td class= 'mapaSala3'><a href='realizar-compra.php?$data'>".$butaca."</a></td>";
+                                            }
                                         }                                                                                             
                             
                         }               

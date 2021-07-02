@@ -59,9 +59,9 @@ if (isset($_POST['formularioEspectador'])) {
             <td>Sesion</td>
             <td>hora inicio</td>
             <td>pelicula</td>
-            <td>hora fila</td>
-            <td>hora butaca</td>
-            <td>hora precio</td>
+            <td>fila</td>
+            <td>butaca</td>
+            <td>precio</td>
         </tr>
     </thead>
     <tbody>
@@ -92,16 +92,20 @@ if (isset($_POST['formularioEspectador'])) {
                 $i = $i + 1;
             }
         }
-        echo '<td>' . $importe . '</td>';
-        echo '</tr>';
+        
+        //echo '<td>' . $importe . '</td>';
+        //echo '</tr>';
         ?>
     </tbody>
+
 </table>
+
+<h2><b>Total importe: <?php echo $importe;?>€</b></h2>
 
 <br><br>
 
 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    <input required type="text" name="confirmar" placeholder="Confirmar entre 1, rechazar entre 0" />
+    <input required type="text" name="confirmar" placeholder="Confirmar= 1, rechazar= 0" />
     <button name="formularioConfirmar" class="botonEnviar" type="submit">Enviar</button>
 </form>
 
