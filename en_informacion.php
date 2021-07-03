@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informacion</title>
-    <!-- <link rel="stylesheet" href="estilos3.css"> -->
+    
     <link rel="stylesheet" href="estilos2.css">
 </head>
 
@@ -14,11 +14,11 @@
     <div class="cajasMenu-2">
         
             <h1 class="texto">               
-                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
-                    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb<br>
-                    ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc<br>
-                    dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd<br>
-                    mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm                
+                    cines y cartelera<br>
+                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>
+                    yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy<br>
+                    zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz<br>
+                    Todos los servicios estan disponibles las 24 horas del dia                
             </h1>   
         
     </div>
@@ -33,10 +33,3 @@
                 </h2>
         </div>
     </div>
-
-    
-
-
-
-
-</body>

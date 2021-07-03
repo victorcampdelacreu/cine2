@@ -175,20 +175,18 @@ function comprobar_espectador($DNI){
 
 function buscar_tarjetaEspectador($DNI)
 {
-    $query = "select tarjeta FROM espectadores where DNI ='$DNI'";
+    $query = "SELECT tarjeta FROM espectadores where DNI ='$DNI'LIMIT 1";
     $result = mysqli_query(OpenCon(), $query);
     $res = mysqli_fetch_array($result);
-    return $res;
+    return $res['tarjeta'];
 }
-
-
 
 //******************************************************************** */
 
-function calculo_zona($f, $c, $n, $m)
+function calculo_zona($f, $c, $n, $m, $lat, $fon)
 {
 
-    if ($c > 3 && $c <= $m - 3 && $f < $n - 3) {
+    if ($c > $lat && $c <= $m - $lat && $f <= $n - $fon) {
         $zona = 1;
     } else {
         if ($f >= $n - 3) {

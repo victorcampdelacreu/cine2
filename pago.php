@@ -33,12 +33,20 @@ $espectador = listar_espectadores();
 if (isset($_POST['formularioEspectador'])) {
     // busca la tarjeta del espectador
     $DNI = $_POST['DNI'];
+    
     if ($DNI != "") {
-
-        $tarjeta = buscar_tarjetaEspectador($DNI);
+        $n=comprobar_espectador($DNI);
+        
+            
+         if($n>0){
+            $tarjeta = buscar_tarjetaEspectador($DNI);    
+        }
+         else{
+           
+            header("Location: http://localhost/cine/pago.php?mensaje=DNI no existe");    
+        }
         
         
-        // si no encuentra espectador, lanzar mensaje de error
 
     } else {
         // toma el numero de tarjeta que se ha introducido
@@ -48,7 +56,7 @@ if (isset($_POST['formularioEspectador'])) {
         
         if ($tam != 16) {
             
-            header("Location: http://localhost/cine/pago.php?mensaje=El número de tarjeta debe de tener 16 caracteres");
+            header("Location: http://localhost/cine/pago.php?mensaje=El número de tarjeta debe de tener 16 caracteres".$tam);
         }
     }
 }

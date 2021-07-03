@@ -29,7 +29,9 @@
             $sala = buscar_sala($sala_id);
             
             $n = $sala['numFilas'];
-            $m = $sala['numColumnas'];            
+            $m = $sala['numColumnas'];
+            $lat=$sala['lateral'];
+            $fon=$sala['fondo'];           
             
             //calcula el numero de butaca para cada fila-colunma y asigna la zona
             // n = numFilas, m= numColumnas  -->
@@ -45,7 +47,7 @@
                 for ($j = 0; $j < $m ; $j++) {
                     $f = $i+1;
                     $c = $j+1;
-                    $zona = calculo_zona($f, $c, $n, $m);
+                    $zona = calculo_zona($f, $c, $n, $m, $lat, $fon);
                     $butaca = calculo_butaca($c, $m);
                    // insertar mapas *****/
                     insertar_mapa($sala_id,$i,$j,$butaca,$zona);
