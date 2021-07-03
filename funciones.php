@@ -36,9 +36,9 @@ function buscar_pelicula($id)
     return $res;
 }
 //************************************************************************** */
-function insertar_sala($nombre, $direccion, $poblacion, $numFilas, $numColumnas)
+function insertar_sala($nombre, $direccion, $poblacion, $numFilas, $numColumnas, $lateral, $fondo)
 {
-    $query = "INSERT INTO salas(nombre, direccion, poblacion, numFilas, numColumnas) VALUES ('$nombre', '$direccion', '$poblacion','$numFilas','$numColumnas')";
+    $query = "INSERT INTO salas(nombre, direccion, poblacion, numFilas, numColumnas, lateral, fondo) VALUES ('$nombre', '$direccion', '$poblacion',$numFilas,$numColumnas, $lateral, $fondo)";
     $result = mysqli_query(OpenCon(), $query);
     return true;
 }

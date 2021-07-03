@@ -7,11 +7,13 @@ $nombre =$_POST['nombre'];
 $direccion =$_POST['direccion'];
 $poblacion =$_POST['poblacion'];
 $numFilas =$_POST['numFilas'];
-$bumColumnas=$_POST['numColumnas'];
+$numColumnas=$_POST['numColumnas'];
+$lateral=$_POST['lateral'];
+$fondo=$_POST['fondo'];
 
 
 
 
-$insertado = insertar_sala($nombre, $direccion, $poblacion, $numFilas, $numColumnas);
+$insertado = insertar_sala($nombre, $direccion, $poblacion, $numFilas, $numColumnas, $lateral, $fondo);
 
 header("Location: en_salas.php");
