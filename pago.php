@@ -22,45 +22,8 @@ $espectador = listar_espectadores();
 
 ?>
 
-<!-- entrar DNI o tarjeta -->
-<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-    <input  type="text" name="DNI" placeholder="Si está registrado entre DNI, sino entre tarjeta" />
-    <input  type="text" name="tarjeta" placeholder="Entre su numero tarjeta" />
-    <button name="formularioEspectador" class="botonEnviar" type="submit">Enviar</button>
-</form>
 
-<?php
-if (isset($_POST['formularioEspectador'])) {
-    // busca la tarjeta del espectador
-    $DNI = $_POST['DNI'];
-    
-    if ($DNI != "") {
-        $n=comprobar_espectador($DNI);
-        
-            
-         if($n>0){
-            $tarjeta = buscar_tarjetaEspectador($DNI);    
-        }
-         else{
-           
-            header("Location: http://localhost/cine/pago.php?mensaje=DNI no existe");    
-        }
-        
-        
 
-    } else {
-        // toma el numero de tarjeta que se ha introducido
-        $tarjeta = $_POST['tarjeta'];
-        // verifica que tarjeta tiene 16 digitos (ver registrar espectadores)
-        $tam = strlen($tarjeta); // calcula el num caracteres de la tarjeta
-        
-        if ($tam != 16) {
-            
-            header("Location: http://localhost/cine/pago.php?mensaje=El número de tarjeta debe de tener 16 caracteres".$tam);
-        }
-    }
-}
-?>
 <br><br>
 <!-- tabla con las entradas pedidas para confirmar-->
 <table class="tabla">
@@ -116,6 +79,50 @@ if (isset($_POST['formularioEspectador'])) {
 
 <br><br>
 
+<!-- entrar DNI o tarjeta -->
+<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <input  type="text" name="DNI" placeholder="Si está registrado entre DNI, sino entre tarjeta" />
+    <input  type="text" name="tarjeta" placeholder="Entre su numero tarjeta" />
+    <button name="formularioEspectador" class="botonEnviar" type="submit">Enviar</button>
+</form>
+
+
+<?php
+if (isset($_POST['formularioEspectador'])) {
+    // busca la tarjeta del espectador
+    $DNI = $_POST['DNI'];
+    
+    if ($DNI != "") {
+        $n=comprobar_espectador($DNI);
+        
+            
+         if($n>0){
+            $tarjeta = buscar_tarjetaEspectador($DNI);    
+        }
+         else{
+           
+            header("Location: http://localhost/cine/pago.php?mensaje=DNI no existe");    
+        }
+        
+        
+
+    } else {
+        // toma el numero de tarjeta que se ha introducido
+        $tarjeta = $_POST['tarjeta'];
+        // verifica que tarjeta tiene 16 digitos (ver registrar espectadores)
+        $tam = strlen($tarjeta); // calcula el num caracteres de la tarjeta
+        
+        
+        if ($tam != 16) {
+                        
+            header("Location: http://localhost/cine/pago.php?mensaje=El número de tarjeta debe de tener 16 caracteres".$tam);
+        }
+    }
+}
+?>
+
+
+
 <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <input required type="text" name="confirmar" placeholder="Confirmar= 1, rechazar= 0" />
     <button name="formularioConfirmar" class="botonEnviar" type="submit">Enviar</button>
@@ -127,7 +134,7 @@ if (isset($_POST['confirmar'])) {
     $confirmar = $_POST['confirmar'];  
     if ($confirmar == 1) { ?>
         <br><br>
-        <!-- instrucciones para enviar la tabla (implode - explode -->)
+        <!-- instrucciones para enviar la tabla (implode - explode -->
         <form action="emitir_entradas.php" method="POST">
             <input type="hidden" value="<?php echo implode(",", $tabla) ?>" name="tabla">
             <button style="width: 120px;" type="submit" class="botonEnviar">Emitir Entradas</button>
