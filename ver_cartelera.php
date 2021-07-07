@@ -16,7 +16,7 @@
         $peliculas = listar_peliculas();
         $salas = listar_salas();
         $cartelera = listar_cartelera();
-        //$pelicula = buscar_pelicula($p);
+        
  
     ?>
     

@@ -35,6 +35,12 @@
                 <a class="enlaces" href="ver_mapas.php">Ver mapa sala</a>
             </h2>
         </div>
+
+        <div class="cajas">
+            <h2>
+                <a class="enlaces" href="ver_peliculas.php">Peliculas</a>
+            </h2>
+        </div>
     </div>
    
     </div>
