@@ -29,8 +29,12 @@
             <?php
             require('./funciones.php');
             $peliculas = listar_peliculas();
+           
             ?>
-
+            <!--************************************************-->
+             <form action="" method="POST">
+                
+                
             <?php
             while ($pelicula = mysqli_fetch_array($peliculas)) {
                 echo '<tr>';
@@ -38,15 +42,12 @@
                 echo '<td>' . $pelicula['nombre'] . '</td>';
                 echo '<td>' . $pelicula['link'];
                 $link=$pelicula['link'];
-                
-                //<form action="ver_imagen.php" method="POST">
+                          
                 echo '<td><a href=""><a href="ver_imagen.php?id=' . $link . '">Ver imagen</a> </td>';
-                //</form>
-                
                 echo '</tr>';           
             }               
-                            ?>
-
+            ?>
+            </form>
         </tbody>
     </table>
     <br>

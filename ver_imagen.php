@@ -12,8 +12,9 @@
 <body>
 
 <?php
-    //$imagen=$_POST['link'];
-    echo $_POST['link'];
+    require('funciones.php');
+    $imagen=$_GET['link'];
+    echo $imagen;
     echo die;
 
 
