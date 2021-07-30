@@ -14,13 +14,18 @@
 <?php
     require('funciones.php');
     $link = $_GET['link'];
-
+    $pelicula_id = $_GET['id'];
+    
+    $text = buscar_pelicula($pelicula_id);
+    $nombre = $text['nombre'];
+    $titulo = 'El titulo de la pelicula es:  ';
    
+ 
 
     // diseño página con imagen
     echo "<table>";
-
-    echo "<td class= 'mapaSala1'>".$link.'</td>';
+    echo "<td class = 'cuadro2'>".$titulo." , ".$nombre."</td>";
+    echo "<td><img class='cuadro' src='img/".$link."' width='200'/></td>";
 
     
 

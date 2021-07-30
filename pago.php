@@ -20,6 +20,14 @@ $salas = listar_salas();
 $cartelera = listar_cartelera();
 $espectador = listar_espectadores();
 
+if(isset($_GET['mensaje'])){
+    echo $_GET['mensaje'];
+}
+
+if(isset($_GET['mensajeTarjeta'])){
+    echo $_GET['mensajeTarjeta'];
+}
+
 ?>
 
 
@@ -101,7 +109,7 @@ if (isset($_POST['formularioEspectador'])) {
         }
          else{
            
-            header("Location: http://localhost/cine/pago.php?mensaje=DNI no existe");    
+            header("Location: http://localhost/cine/pago.php?mensaje=El DNI: ".$DNI." no existe");    
         }
         
         
@@ -115,7 +123,7 @@ if (isset($_POST['formularioEspectador'])) {
         
         if ($tam != 16) {
                         
-            header("Location: http://localhost/cine/pago.php?mensaje=El número de tarjeta debe de tener 16 caracteres".$tam);
+            header("Location: http://localhost/cine/pago.php?mensajeTarjeta=El número de tarjeta debe de tener 16 caracteres");
         }
     }
 }
