@@ -24,7 +24,10 @@
 
     // diseño página con imagen
     echo "<table>";
-    echo "<td class = 'cuadro2'>".$titulo." , ".$nombre."</td>";
+    echo "<td class = 'cuadro2'>".$titulo."</td>";
+    echo "<tr>";
+    echo "<td class = 'cuadro2'>".$nombre."</td>";
+    
     echo "<td><img class='cuadro' src='img/".$link."' width='200'/></td>";
 
     
