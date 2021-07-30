@@ -42,8 +42,10 @@
                 echo '<td>' . $pelicula['nombre'] . '</td>';
                 echo '<td>' . $pelicula['link'];
                 $link=$pelicula['link'];
-                          
-                echo '<td><a href=""><a href="ver_imagen.php?id=' . $link . '">Ver imagen</a> </td>';
+                            
+
+                
+                echo '<td><a href="ver_imagen.php?id='. $pelicula['id'] .'&link='.$link. '">Ver imagen</a> </td>';
                 echo '</tr>';           
             }               
             ?>
