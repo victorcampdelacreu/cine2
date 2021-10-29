@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CINE</title>
+    <title>CINEMA</title>
     <link rel="stylesheet" href="estilos2.css">
 </head>
 
 <body class="body">
 
+
     <div class="cajasMenu">
         
         <div class="cajas">
             <h2>
-                <a class="enlaces" href="en_informacion.php">Informacion</a>
+                <a class="enlaces" href="index-es.php">Español</a>
             </h2>
         
     </div>
@@ -23,23 +24,27 @@
     <div class="cajasMenu">
         <div class="cajas">
             <h2>
-                <a class="enlaces" href="en_cine.php">Cine</a>
-            </h2>
-        
-        
+                <a class="enlaces" href="index-cat.php">Català</a>
+            </h2>    
+    </div>
+
+    <div class="cajasMenu">
+        <div class="cajas">
+            <h2>
+                <a class="enlaces" href="index-en.php">English</a>
+            </h2>    
     </div>
 
     <div class="cajasMenu">
         
         <div class="cajas">
             <h2>
-                <a class="enlaces" href="en_administracion.php">Administracion</a>
+                <a class="enlaces" href="index-fr.php">Francaise</a>
             </h2>
         </div>
-        
-
     </div>
 
+    
  
 
 

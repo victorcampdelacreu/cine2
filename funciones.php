@@ -6,6 +6,34 @@ require('config.php');
 
 //define las funciones del proyecto */
 
+function insertar_language($idioma, $active)
+{
+    $query = "INSERT INTO language(idioma, active) VALUES ('$idioma', $active)";
+    $result = mysqli_query(OpenCon(), $query);
+    return true;
+}
+
+function listar_language()
+{
+    $sql = "SELECT * FROM language";
+    $result = mysqli_query(OpenCon(), $sql);
+    return $result;
+}
+
+function buscar_text($id)
+{
+    $query = "select nombre FROM texts where id =$id";
+    $result = mysqli_query(OpenCon(), $query);
+    $res = mysqli_fetch_array($result);
+    return $res;
+}
+function listar_texts()
+{
+    $sql = "SELECT * FROM texts";
+    $result = mysqli_query(OpenCon(), $sql);
+    return $result;
+}
+
 function insertar_pelicula($nombre, $link)
 {
     $query = "INSERT INTO peliculas(nombre, link) VALUES ('$nombre', '$link')";
