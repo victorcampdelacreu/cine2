@@ -76,8 +76,7 @@ if(isset($_GET['mensajeTarjeta'])){
             }
         }
         
-        //echo '<td>' . $importe . '</td>';
-        //echo '</tr>';
+        
         ?>
     </tbody>
 

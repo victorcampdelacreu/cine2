@@ -6,11 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Precios</title>
+    <?php
+    include 'common/css.php';
+    ?>
     <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
+<?php
+    $a= 'ENTRADA PRECIOS';
+    $z = 'RETURN';
+    $p = 'PRINT';
+    ?>
+    <!-- Barra RETURN ----->
+    <div class="container-fluid">
+        <div class="row mt-2">
+            <div class="col-lg-12">
+                <div class="alert alert-info" role="alert">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h2><?php echo $a; ?></h2>
+                        </div>
 
+                        <div class="col-lg-6">
+                            <a href="en_administracion.php" class="btn btn-danger float-right"><?php echo $z; ?></a>
+                            <!-- 0nclick=window.print() es para imprimir-->
+                            <a onclick="window.print()" href="#" class="btn btn-primary float-right mr-2"><?php echo $p; ?></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!----------------------------------------------------------------->
     <!-- Formulario para insertar los precios -->
 
     <form class = "formulario" action="insertar_precios.php" method="POST">
@@ -59,12 +86,7 @@
 
         </tbody>
     </table>
-    <br>
-    <div class="cajas">
-            <h2>
-                <a class="enlaces" href="en_administracion.php">Ir a administracion</a>
-            </h2>
-        </div>
+    
 </body>
 
 </html>

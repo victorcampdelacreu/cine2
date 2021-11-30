@@ -116,21 +116,6 @@ h2 a {
     text-decoration: none;
 }
 
-.formulario {
-    width: 100%;
-}
-
-.formulario input,
-.formulario select {
-    width: 18%;
-    height: 25px;
-}
-
-.formulario select {
-    height: 32px;
-}
-
-
 /*
 .formulario select {
     width: 16%;

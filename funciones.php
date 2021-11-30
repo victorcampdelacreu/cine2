@@ -304,3 +304,32 @@ function buscar_precio($sala_id, $zona, $sesion){
 function entradas(){
     $query = "SELECT * FROM compras WHERE cartelera_id = 0";
 }
+// ----------------------------------------------------------------//
+function insertar_usuario($nombre,$email,$pass,$rol){
+    $query = "INSERT INTO usuarios(nombre,email,pass,rol) VALUES ('$nombre','$email','$pass',$rol)";
+    mysqli_query(OpenCon(), $query);
+    return true;
+}
+function list_users()
+{
+    $sql = "SELECT * FROM usuarios";
+    $result = mysqli_query(OpenCon(), $sql);
+    return $result;
+}
+
+function verificar_usuario($email){
+    $sql = "SELECT * FROM usuarios where email = '$email' LIMIT 1";
+    $result = mysqli_query(OpenCon(), $sql);
+    return $result;
+}
+
+function buscar_usuario($email)
+{
+    $query = "SELECT * FROM usuarios WHERE email = '$email' LIMIT 1";    
+    $result = mysqli_query(OpenCon(), $query);
+    $res = mysqli_fetch_array($result);
+    return $res;
+
+
+}
+ //-----------------------------------------------------------//

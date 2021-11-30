@@ -7,10 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
     <title>Entrada Cartelera</title>
+
+    <?php
+    include 'common/css.php';
+    ?>
 </head>
 
 <body>
+    <?php
+    $a= 'CARTELERA';
+    $z = 'RETURN';
+    $p = 'PRINT';
+    ?>
+    <!-- Barra RETURN ----->
+    <div class="container-fluid">
+        <div class="row mt-2">
+            <div class="col-lg-12">
+                <div class="alert alert-info" role="alert">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h2><?php echo $a; ?></h2>
+                        </div>
 
+                        <div class="col-lg-6">
+                            <a href="en_administracion.php" class="btn btn-danger float-right"><?php echo $z; ?></a>
+                            <!-- 0nclick=window.print() es para imprimir-->
+                            <a onclick="window.print()" href="#" class="btn btn-primary float-right mr-2"><?php echo $p; ?></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!----------------------------------------------------------------->
     <!-- Formulario para insertar la cartelera -->
 
     <?php
@@ -22,52 +50,71 @@
 
     <h3>
         <?php
-            if(isset($_GET['mensaje'])){
-                echo $_GET['mensaje'];
-            }
+        if (isset($_GET['mensaje'])) {
+            echo $_GET['mensaje'];
+        }
         ?>
     </h3>
 
-    <form class="formulario" action="insertar_cartelera.php" method="POST">
-        
-        <input required type="date" name="fechaInicio" placeholder="entre la fecha inicio" />
-        <input required type="date" name="fechaFinal" placeholder="entre la fecha final" />
+    <div class="container">
+        <form class="formulario" action="insertar_cartelera.php" method="POST">
 
-        <select name="sala_id">
-            <option>Seleccione sala</option>
-            <?php
-            while($sala = mysqli_fetch_array($salas)){?>
-                <option value="<?php echo $sala['id']; ?>"><?php echo $sala['nombre']; ?></option>
-            <?php } ?>
-        </select>
+            <div class="row mt-5">
+                <div class="col-lg-4">
+                    <input class="form-control" required type="date" name="fechaInicio" placeholder="entre la fecha inicio" />
+                </div>
+                <div class="col-lg-4">
+                    <input class="form-control" required type="date" name="fechaFinal" placeholder="entre la fecha final" />
+                </div>
+                <div class="col-lg-4">
+                    <select class="form-control" name="sala_id">
+                        <option>Seleccione sala</option>
+                        <?php
+                        while ($sala = mysqli_fetch_array($salas)) { ?>
+                            <option value="<?php echo $sala['id']; ?>"><?php echo $sala['nombre']; ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+            </div>
 
-        <input required type="text" name="sesion" placeholder="entre la sesion" />
-        <input required type="text" name="horaInicio" placeholder="entre la hora inicio" />
+            <div class="row mt-3">
+                <div class="col-lg-4">
+                    <input  class="form-control" required type="text" name="sesion" placeholder="entre la sesion" />
+                </div>
+                <div class="col-lg-4">
+                    <input class="form-control"  required type="text" name="horaInicio" placeholder="entre la hora inicio" />
+                </div>
+                <div class="col-lg-4">
+                    <select  class="form-control" name="pelicula_id">
 
-        <select name="pelicula_id">
-    
-            <option>Seleccione pelicula</option>
-            <?php
-            while($pelicula = mysqli_fetch_array($peliculas)){?>
-                <option value="<?php echo $pelicula['id']; ?>"><?php echo $pelicula['nombre']; ?></option>
-            <?php } ?>
-        </select>
+                        <option>Seleccione pelicula</option>
+                        <?php
+                        while ($pelicula = mysqli_fetch_array($peliculas)) { ?>
+                            <option value="<?php echo $pelicula['id']; ?>"><?php echo $pelicula['nombre']; ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+            </div>
 
-        
+            <div class="row mt-3">
+                <div class="col-lg-12 text-center">
+                    <button class="btn btn-primary btn-lg" class="botonEnviar" type="submit">Enviar</button>
+                </div>
+            </div>
 
-        <button class="botonEnviar" type="submit">Enviar</button>
-    </form>
+        </form>
+    </div>
 
     <br><br>
 
 
     <br>
-    <div class="cajas">
-        <h2>
-            <a class="enlaces" href="en_administracion.php">Ir a administracion</a>
-        </h2>
-    </div>
+    
 
+
+    <?php
+    include('js.php');
+    ?>
 </body>
 
 </html>
