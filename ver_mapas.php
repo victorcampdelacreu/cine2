@@ -11,34 +11,16 @@
 </head>
 
 <body>
-<?php
-include 'common/css.php';
-$a= 'VER MAPAS';
-$z = 'RETURN';
-$p = 'PRINT';
-?>
-<!-- Barra RETURN ----->
-<div class="container-fluid">
-    <div class="row mt-2">
-        <div class="col-lg-12">
-            <div class="alert alert-info" role="alert">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h2><?php echo $a; ?></h2>
-                    </div>
-
-                    <div class="col-lg-6">
-                        <a href="en_cine.php" class="btn btn-danger float-right"><?php echo $z; ?></a>
-                        <!-- 0nclick=window.print() es para imprimir-->
-                        <a onclick="window.print()" href="#" class="btn btn-primary float-right mr-2"><?php echo $p; ?></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<!----------------------------------------------------------------->
     <?php
+    include 'common/css.php';
     require('./funciones.php');
+    $a = 'VER MAPAS SALAS';
+    barra($a);
+
+    ?>
+
+    <?php
+
     $mapas = listar_mapas();
     ?>
 
@@ -46,60 +28,51 @@ $p = 'PRINT';
         <input required type="text" name="sala_id" placeholder="entre el ID de la sala" />
         <button name="formularioSala" class="botonEnviar" type="submit">Enviar</button>
     </form>
+    <tbody>
+        <?php
+        if (isset($_POST['formularioSala'])) {
 
-    <?php
-        if(isset($_POST['formularioSala'])){
-            
             $n = 0;
             $m = 0;
             $sala_id = $_POST['sala_id'];
             $sala = buscar_sala($sala_id);
-            
+
             $nombreSala = $sala['nombre'];
-            $numFilas= $sala['numFilas'];
-            $numColumnas=$sala['numColumnas'];
-                        
+            $numFilas = $sala['numFilas'];
+            $numColumnas = $sala['numColumnas'];
+
             $mapas = listar_mapas();
             echo "<table>";
-                while ($mapa = mysqli_fetch_array($mapas)){
-                
-                    
-                        if ($mapa['sala_id'] == $sala_id){                      
-                            
-                            if($n<$mapa['fila']){
-                                echo'</tr>';
-                                $n=$n+1;
+            while ($mapa = mysqli_fetch_array($mapas)) {
 
-                            }           
-                                        $zona=$mapa['zona'];
-                                        $butaca=$mapa['butaca'];                                   
-                                        if ($zona==1){
-                                            echo "<td class= 'mapaSala1'>".$butaca.'</td>';                                                   
-                                        }
-                                        if ($zona==2){
-                                            echo "<td class= 'mapaSala2'>".$butaca.'</td>';        
-                                        }
-                                        if ($zona==3){
-                                            echo "<td class= 'mapaSala3'>".$butaca.'</td>';
-                                        }                                                                                             
-                                
-                            
-                        }   
-                         
-                   
-                        
-                }             
-                echo "</table>";
+
+                if ($mapa['sala_id'] == $sala_id) {
+
+                    if ($n < $mapa['fila']) {
+                        echo '</tr>';
+                        $n = $n + 1;
+                    }
+                    $zona = $mapa['zona'];
+                    $butaca = $mapa['butaca'];
+                    if ($zona == 1) {
+                        echo "<td class= 'mapaSala1'>" . $butaca . '</td>';
+                    }
+                    if ($zona == 2) {
+                        echo "<td class= 'mapaSala2'>" . $butaca . '</td>';
+                    }
+                    if ($zona == 3) {
+                        echo "<td class= 'mapaSala3'>" . $butaca . '</td>';
+                    }
+                }
+            }
+            echo "</table>";
         }
-    ?>
 
+        ?>
+    </tbody>
 
-    <br><br>   
-    <div class="cajas">
-        <h2>
-            <a class="enlaces" href="en_cine.php">Ir a cine</a>
-        </h2>
-    </div>
+    <br><br>
+
 </body>
 
 </html>

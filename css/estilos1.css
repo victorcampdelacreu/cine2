@@ -1,0 +1,9 @@
+.boton{
+    height: 60px;
+    line-height: 3;
+}
+
+.imagen{
+    width: 65% !important;
+    margin-left: 10%;
+}

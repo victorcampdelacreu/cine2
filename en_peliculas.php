@@ -80,11 +80,7 @@
         </tbody>
     </table>
     <br>
-    <div class="cajas">
-            <h2>
-                <a class="enlaces" href="en_administracion.php">Ir a admiistracion</a>
-            </h2>
-        </div>
+    
 </body>
 
 </html>

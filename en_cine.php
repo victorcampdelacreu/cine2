@@ -10,48 +10,41 @@
     <link rel="stylesheet" href="estilos2.css">
 </head>
 
-<body class="body">
-
-    <div class="cajasMenu">
-        
-       
-        <div class="cajasMenu">
-        
-         
-
-        <div class="cajas">
-            <h2>
-                <a class="enlaces" href="registro_espectadores.php">Registro espectadores</a>
-            </h2>
-        </div>
-        
-        <div class="cajas">
-            <h2>
-                <a class="enlaces" href="ver_cartelera.php">Ver cartelera por salas</a>
-            </h2>
-        </div>
-        <div class="cajas">
-            <h2>
-                <a class="enlaces" href="ver_mapas.php">Ver mapa sala</a>
-            </h2>
-        </div>
-
-        <div class="cajas">
-            <h2>
-                <a class="enlaces" href="ver_peliculas.php">Peliculas</a>
-            </h2>
-        </div>
-    </div>
+<body>
+<?php
+    require('./funciones.php');
    
-    </div>
     
-    <div class="cajas2">
-            <h2>
-                <a class="enlaces" href="index.php">Ir al inicio</a>
-            </h2>
+    $a= 'CINE';
+    barra($a);
+    ?>
+
+<div class="container-fluid">
+
+<div class="row">
+    <div class="col-lg-3">
+        <div class="row mt-2">
+
+            <div class="col-lg-12 mb-2 col-6">
+                <a class="btn btn-block boton btn-warning" href="registro_espectadores.php">REGISTRO ESPECTADORES</a>
+            </div>
+            <div class="col-lg-12 mb-2 col-6">
+                <a class="btn btn-block boton btn-warning" href="ver_cartelera.php">VER CARTELERA</a>
+            </div>
+            <div class="col-lg-12 mb-2 col-6">
+                <a class="btn btn-block boton btn-warning" href="ver_mapas.php">VER MAPAS SALAS</a>
+            </div>
+            <div class="col-lg-12 mb-2 col-6">
+                <a class="btn btn-block boton btn-warning" href="ver_peliculas.php">VER PELICULAS</a>
+            </div>
+            
+            
+
+
         </div>
 
-   
+
+    </div>
 
 
 </body>

@@ -11,6 +11,15 @@
 </head>
 
 <body class="body">
+
+<?php
+    include 'common/css.php';
+    require('funciones.php');
+    $a= 'INFORMACION';
+    $return = 'index-1.php';
+    barra($a,$return);
+    ?>
+
     <div class="cajasMenu-2">
         
             <h1 class="texto">               
@@ -23,14 +32,7 @@
         
     </div>
         
-        <
-    <!--<div class = "cajasMenu">-->
-        <div class="cajas2">
-                <h2>
-                    <a class="enlaces" href="index.php">Ir al inicio</a>
-                </h2>
-        </div>
-    </div>
+    
 
 
 </body>

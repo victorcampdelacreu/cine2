@@ -1,3 +1,5 @@
+
+
 <?php
 
 require 'funciones.php';
@@ -7,10 +9,8 @@ $email = $_POST['email'];
 $pass = $_POST['pass'];
 $rol = $_POST['rol'];
 
-
-
 $usuario = verificar_usuario($email);
-if ($usuario !=''){
+if ($usuario->num_rows > 0){
     header('Location: input_users.php?mensaje=Usuario: '.$nombre.' ya existe');
 
 }
