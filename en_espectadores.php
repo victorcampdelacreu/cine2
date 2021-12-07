@@ -15,7 +15,8 @@
 <body><?php
         require 'funciones.php';
         $a='ENTRADA DATOS ESPECTADORES';
-        barra($a);
+        $return='en_adinistracion';
+        barra($a,$return);
         ?>
 
  

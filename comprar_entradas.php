@@ -14,7 +14,8 @@
     require 'funciones.php';
     include 'common/css.php';
     $a = "COMPRAR ENTRADAS";
-    barra($a);
+    $return='en_cine.php';
+    barra($a,$return);
     ?>
 
 

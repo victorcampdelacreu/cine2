@@ -16,7 +16,8 @@
    
     
     $a= 'CINE';
-    barra($a);
+    $return='index-1.php';
+    barra($a,$return);
     ?>
 
 <div class="container-fluid">

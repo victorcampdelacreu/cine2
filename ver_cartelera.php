@@ -14,7 +14,8 @@
 <?php
         require 'funciones.php';
         $a= "VER CARTELERA";
-        barra($a);
+        $return='EN_CINE';
+        barra($a,$return);
        
         // este programa muestra la cartelera de una fecha determinada y permite elegir lo que se quiere comprar
         

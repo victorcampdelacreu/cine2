@@ -16,7 +16,8 @@
     <?php
     require 'funciones.php';
     $a=' Entrada precios localidades';
-    barra($a);
+    $return='en_administracion';
+    barra($a,$return);
     
     ?>
     <!-- Formulario para insertar los precios -->

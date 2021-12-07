@@ -12,33 +12,12 @@
 <body>
 <?php
 include 'common/css.php';
+require('funciones.php');
 $a= 'VER IMAGEN PELICULA';
-$z = 'RETURN';
-$p = 'PRINT';
-?>
-<!-- Barra RETURN ----->
-<div class="container-fluid">
-    <div class="row mt-2">
-        <div class="col-lg-12">
-            <div class="alert alert-info" role="alert">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <h2><?php echo $a; ?></h2>
-                    </div>
+$return='en_cine.php';
 
-                    <div class="col-lg-6">
-                        <a href="en_cine.php" class="btn btn-danger float-right"><?php echo $z; ?></a>
-                        <!-- 0nclick=window.print() es para imprimir-->
-                        <a onclick="window.print()" href="#" class="btn btn-primary float-right mr-2"><?php echo $p; ?></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<!----------------------------------------------------------------->
 
-<?php
-    require('funciones.php');
+    
     $link = $_GET['link'];
     $pelicula_id = $_GET['id'];
     

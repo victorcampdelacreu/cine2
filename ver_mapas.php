@@ -15,7 +15,8 @@
     include 'common/css.php';
     require('./funciones.php');
     $a = 'VER MAPAS SALAS';
-    barra($a);
+    $return='en_cine.php';
+    barra($a,$return);
 
     ?>
 
@@ -63,11 +64,12 @@
                     if ($zona == 3) {
                         echo "<td class= 'mapaSala3'>" . $butaca . '</td>';
                     }
+                    
                 }
             }
             echo "</table>";
         }
-
+        
         ?>
     </tbody>
 

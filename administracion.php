@@ -17,7 +17,8 @@
     <?php
     require 'funciones.php';
     $a = "ADMINISTRACION login";
-    barra($a);
+    $return= 'index.php';
+    barra($a,$return);
     ?>
     <div class="container-fluid">
 

@@ -17,7 +17,8 @@
 <?php
         require 'funciones.php';
         $a= "CARTELERA";
-        barra($a);
+        $return='en_administracion';
+        barra($a,$return);
         ?>
    
     <!-- Formulario para insertar la cartelera -->

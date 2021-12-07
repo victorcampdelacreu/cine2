@@ -375,7 +375,7 @@ function buscar_usuario($email)
     $z = 'RETURN';
     $p = 'PRINT';
     
-   
+     
     ?>
     <!-- Barra RETURN ----->
     <div class="container-fluid">
@@ -383,8 +383,8 @@ function buscar_usuario($email)
             <div class="col-lg-12">
                 <div class="alert alert-info" role="alert">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <h2><?php echo $a; ?></h2>
+                        <div class="col-lg-10">
+                            <h2><?php echo $a ?></h2>
                         </div>
 
                         <div>

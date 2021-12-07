@@ -19,7 +19,8 @@
     <?php
         require 'funciones.php';
         $a= "ADMINISTRACION";
-        barra($a);
+        $return = 'administracion.php';
+        barra($a,$return);
         ?>
 
         <div class="container-fluid">
@@ -41,7 +42,7 @@
                             <a class="btn btn-block boton btn-warning" href="en_precios.php">PRECIOS</a>
                         </div>
                         <div class="col-lg-12 mb-2 col-6">
-                            <a class="btn btn-block boton btn-warning" href="en_cartelera.php">CARTELERA</a>
+                            <a class="btn btn-block boton btn-warning" href="en_cartelera.php">ENTRADA CARTELERA</a>
                         </div>
                         <div class="col-lg-12 mb-2 col-6">
                             <a class="btn btn-block boton btn-warning" href="en_espectadores.php">ESPECTADORES</a>
