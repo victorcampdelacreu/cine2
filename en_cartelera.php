@@ -10,6 +10,7 @@
 
     <?php
     include 'common/css.php';
+    
     ?>
 </head>
 
@@ -17,7 +18,7 @@
 <?php
         require 'funciones.php';
         $a= "CARTELERA";
-        $return='en_administracion';
+        $return='en_administracion.php';
         barra($a,$return);
         ?>
    

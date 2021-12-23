@@ -9,7 +9,7 @@
     <?php
     include 'common/css.php';
     ?>
-    <link rel="stylesheet" href="estilos2.css">
+    
 </head>
 
 <body>
@@ -18,7 +18,7 @@
     $mapas = listar_mapas();
     
     $a= 'MAPA SALAS';
-    $return='index.php';
+    $return='en_administracion.php';
     barra($a,$return);
     ?>
     

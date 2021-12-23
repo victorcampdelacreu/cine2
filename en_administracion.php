@@ -9,8 +9,7 @@
     <?php
     include 'common/css.php';
     ?>
-    <!-- <link rel="stylesheet" href="estilos.css"> -->
-    <link rel="stylesheet" href="estilos2.css">
+    
 </head>
 
 <body class="body">
@@ -19,7 +18,7 @@
     <?php
         require 'funciones.php';
         $a= "ADMINISTRACION";
-        $return = 'administracion.php';
+        $return = 'index-1.php';
         barra($a,$return);
         ?>
 
@@ -45,7 +44,7 @@
                             <a class="btn btn-block boton btn-warning" href="en_cartelera.php">ENTRADA CARTELERA</a>
                         </div>
                         <div class="col-lg-12 mb-2 col-6">
-                            <a class="btn btn-block boton btn-warning" href="en_espectadores.php">ESPECTADORES</a>
+                            <a class="btn btn-block boton btn-warning" href="en_cambio_fecha.php">CAMBIO FECHA</a>
                         </div>
                         <div class="col-lg-12 mb-2 col-6">
                             <a class="btn btn-block boton btn-warning" href="listado_espectadores.php">LISTADO ESPECTADORES</a>

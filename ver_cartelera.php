@@ -6,15 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver Cartelera</title>
-
-    <link rel="stylesheet" href="estilos.css">
+    <?php
+         include 'common/css.php';
+    ?>
+    
 </head>
 
 </body>
 <?php
         require 'funciones.php';
         $a= "VER CARTELERA";
-        $return='EN_CINE';
+        $return='en_cine.php';
         barra($a,$return);
        
         // este programa muestra la cartelera de una fecha determinada y permite elegir lo que se quiere comprar

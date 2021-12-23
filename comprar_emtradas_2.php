@@ -20,23 +20,17 @@
     ?>
 
     <!--muestra leyenda "seleccione asiento!"-->
-    <div class="row mt-2">
-        <div class="col-lg-3 offset-lg-0">
-            <div class="cajas">
-                <h2>
-                    <a class="enlaces">Elija asientos</a>
-                </h2>
-            </div>
-        </div>
-        <div class="col-lg-6 offset-lg-0">
-            <div class="cajas">
-                <h2>
-                    <a class="enlaces" href="pago.php">Ir a pago entradas</a>
-                </h2>
-            </div>
-        </div>
+    <div class="cajas">
+        <h2>
+            <a class="enlaces">Elija asientos</a>
+        </h2>
     </div>
-
+    <br>
+    <div class="cajas">
+        <h2>
+            <a class="enlaces" href="pago.php">Ir a pago entradas</a>
+        </h2>
+    </div>
     <?php
     // este programa permite al espectador elegir butacas de la sala y pelicula seleccionada en "ver_cartelera"
 
@@ -121,7 +115,7 @@
 
     ?>
 
-
+    
 
 
 </html>

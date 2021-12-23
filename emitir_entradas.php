@@ -6,12 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emitir entradas</title>
-    <link rel="stylesheet" href="estilos.css">
+    <?php
+         include 'common/css.php';
+    ?>
 </head>
 
 <body>
     <?php
     require('funciones.php');
+    $a = 'Emitir Entradas';
+    $return = 'ver_cartelera.php';
+    barra ($a,$return);
     $i = 0;
     $tabla = $_POST['tabla'];
     $tabla = explode(",", $tabla); ?> <!-- instruccion para traer la tabla-->
@@ -59,11 +64,7 @@
     </table>
 
     <br><br>
-    <div class="cajas">
-        <h2>
-            <a class="enlaces" href="en_cine.php">Ir a cine</a>
-        </h2>
-    </div>
+    
 
 
 

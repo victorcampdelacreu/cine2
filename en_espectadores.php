@@ -9,13 +9,14 @@
     <?php
     include 'common/css.php';
     ?>
-    <link rel="stylesheet" href="estilos.css">
+   
 </head>
 
 <body><?php
         require 'funciones.php';
         $a='ENTRADA DATOS ESPECTADORES';
-        $return='en_adinistracion';
+        $return='en_administracion.php';
+        
         barra($a,$return);
         ?>
 

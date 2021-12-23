@@ -9,7 +9,7 @@
     <?php
     include 'common/css.php';
     ?>
-    <link rel="stylesheet" href="estilos.css">
+   
 </head>
 
 <body>

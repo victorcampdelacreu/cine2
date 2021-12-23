@@ -9,14 +9,14 @@
     <?php
     include 'common/css.php';
     ?>
-    <link rel="stylesheet" href="estilos.css">
+   
 </head>
 
 <body>
     <?php
     require 'funciones.php';
     $a=' Entrada precios localidades';
-    $return='en_administracion';
+    $return='en_administracion.php';
     barra($a,$return);
     
     ?>

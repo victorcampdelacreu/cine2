@@ -6,7 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pago</title>
-    <link rel="stylesheet" href="estilos.css">
+    <?php
+    include 'common/css.php';
+    ?>
+   
 </head>
 
 </body>
@@ -15,7 +18,8 @@
 // muestra todas las butacas reservadas "comprar_entradas --> realizar_compra" y pregunta si confirma o no
 // en el caso de confirmar se emitiran las entradas "emitir_entradas", sino se eliminaran las reservas
 require('./funciones.php');
-
+$a = 'Pago';
+$return = 'ver_cartelera.php';
 $salas = listar_salas();
 $cartelera = listar_cartelera();
 $espectador = listar_espectadores();
@@ -164,11 +168,7 @@ if (isset($_POST['confirmar'])) {
 ?>
 
 <br><br>
-<div class="cajas">
-    <h2>
-        <a class="enlaces" href="en_cine.php">Ir a cine</a>
-    </h2>
-</div>
+
 </body>
 
 </html>

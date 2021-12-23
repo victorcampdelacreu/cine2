@@ -13,7 +13,7 @@
     $return ='index-1.php';
     barra($a,$return);
     ?>
-    <link rel="stylesheet" href="estilos2.css">
+   
 </head>
 
 <body class="body">

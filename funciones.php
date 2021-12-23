@@ -19,21 +19,42 @@ function listar_language()
     $result = mysqli_query(OpenCon(), $sql);
     return $result;
 }
-
-function buscar_text($id)
-{
-    $query = "select nombre FROM texts where id =$id";
+function mostrar_idioma(){
+    $query = "SELECT lang FROM parameters LIMIT 1";
     $result = mysqli_query(OpenCon(), $query);
     $res = mysqli_fetch_array($result);
     return $res;
 }
+//-------------------------------------------------------------------------------
 function listar_texts()
 {
     $sql = "SELECT * FROM texts";
     $result = mysqli_query(OpenCon(), $sql);
     return $result;
 }
+function insertar_texts($lang, $program, $num, $code, $texto)
+{
+    $query = "INSERT INTO texts(lang, program, num, code, texto) VALUES ($lang, $program, $num, $code, '$texto')";
+    mysqli_query(OpenCon(), $query);
+    return true;
+}
 
+
+function buscar_texts($code)
+{
+    $query = "SELECT texto FROM texts WHERE code=$code";
+    $result = mysqli_query(OpenCon(), $query);
+    $res = mysqli_fetch_array($result);
+    return $res;
+}
+
+function verificar_text(){
+    $query = "SELECT COUNT(id) FROM `texts`";
+    $result = mysqli_query(OpenCon(), $query);
+    $res = mysqli_fetch_array($result);
+    return $res[0];
+}
+// -------------------------------------------------------------//
 function insertar_pelicula($nombre, $link)
 {
     $query = "INSERT INTO peliculas(nombre, link) VALUES ('$nombre', '$link')";
@@ -146,22 +167,23 @@ function insertar_cartelera($fechaInicio, $fechaFinal, $sala_id, $sesion, $horaI
     $result = mysqli_query(OpenCon(), $query);
     return true;
 }
-
 function listar_cartelera()
 {
     $sql = "SELECT * FROM cartelera";
     $result = mysqli_query(OpenCon(), $sql);
     return $result;
 }
-
-
 function eliminar_cartelera($id)
 {
     $query = "DELETE FROM cartelera WHERE id = '$id'";
     $result = mysqli_query(OpenCon(), $query);
     return true;
 }
-
+function modificar_cartelera($id,$fechaInicio, $fechaFinal, $sala_id, $sesion, $horaInicio, $pelicula_id){
+    $sql = "UPDATE cartelera SET fechaInicio='$fechaInicio', fechaFinal='$fechaFinal',sala_id=$sala_id,sesion=$sesion,horaInicio='$horaInicio',pelicula_id=$pelicula_id";
+    mysqli_query(OpenCon(), $sql);
+    return true;
+}
 //******************************************************************* */
 
 function insertar_espectador($nombre, $DNI, $tarjeta)
@@ -281,14 +303,14 @@ function modificar_compra($compras_id,$fecha,$sala_id,$pelicula_id,$sesion,$hora
 }
 //********************************************************* */
 function insertar_tabla($tabla){
-    $sql = "INSERT INTO javier (tabla) VALUES ('$tabla')";
+    $sql = "INSERT INTO javier1 (tabla) VALUES ('$tabla')";
     $result = mysqli_query(OpenCon(), $sql);
     return true;
 }
 
 function listar_tabla()
 {
-    $query = "select * FROM javier";
+    $query = "select * FROM javier1";
     $result = mysqli_query(OpenCon(), $query);
     return $result;
     
@@ -334,13 +356,27 @@ function buscar_usuario($email)
 
 
 }
- //-----------------------------------------------------------//
+//---------------------------------------------------------------------//
+function verificar_lingua(){
+    $query = "SELECT COUNT(id) FROM `lingua`";
+    $result = mysqli_query(OpenCon(), $query);
+    $res = mysqli_fetch_array($result);
+    return $res[0];
+}
+
+function insertar_lingua($lang,$lingua)
+{
+    $query = "INSERT INTO lingua(lang,lingua) VALUES ($lang,'$lingua')";
+    mysqli_query(OpenCon(), $query);
+    return true;
+}
+// --------------------------------------------------------------//
+
+
+ 
  function barra($a,$return){
     
-    include 'common/css.php';
     ?>
-    
-    <link rel="stylesheet" href="estilos2.css">
     <!-- rutina para navbar (navegador)-->
     <div class="row">
         <div class="col-lg-12">
@@ -357,7 +393,7 @@ function buscar_usuario($email)
                             </li>
                             
                             <li class="nav-item dropdown">
-                               
+                                    <li><a class="dropdown-item" href="create_text.php">create text</a></li>
                                     <li><a class="dropdown-item" href="index.php">login</a></li>
                                     <li><a class="dropdown-item" href="logout.php">logout</a></li>
             
@@ -374,12 +410,11 @@ function buscar_usuario($email)
     
     $z = 'RETURN';
     $p = 'PRINT';
-    
-     
+      
     ?>
     <!-- Barra RETURN ----->
     <div class="container-fluid">
-        <div class="row mt-2">
+        <div class="row mt-1">
             <div class="col-lg-12">
                 <div class="alert alert-info" role="alert">
                     <div class="row">
@@ -388,9 +423,7 @@ function buscar_usuario($email)
                         </div>
 
                         <div>
-                            <a href=". $return ." class="btn btn-danger float-right"><?php echo $z; ?></a>
-                            <!--<a href="index.php" class="btn btn-danger float-right"><?php echo $z; ?></a>-->
-                            <!-- 0nclick=window.print() es para imprimir-->
+                            <a href="<?php echo $return ?>" class="btn btn-danger float-right"><?php echo $z; ?></a>
                             <a onclick="window.print()" href="#" class="btn btn-primary float-right mr-2"><?php echo $p; ?></a>
                         </div>
                     </div>
